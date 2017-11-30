@@ -12,6 +12,7 @@ def CreateLabels(username, password, repoName):
     jsonObjs = [
         {"name": "breaking", "color": "fbca04"},
         {"name": "needs testing", "color": "39efbc"},
+        {"name": "doc-change", "color": "5124e5"},
         {"name": "new-feature", "color": "250920"}
     ]
 
