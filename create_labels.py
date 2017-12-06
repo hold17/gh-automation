@@ -10,6 +10,8 @@ def CreateLabels(username, password, repoName):
     print("Posting labels...")
 
     jsonObjs = [
+        {"name": "ui", "color": "1d76db"},
+        {"name": "backend", "color": "d14565"},
         {"name": "breaking", "color": "fbca04"},
         {"name": "needs testing", "color": "39efbc"},
         {"name": "doc-change", "color": "5124e5"},
