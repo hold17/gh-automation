@@ -26,7 +26,7 @@ def GetOrganisationName(username, password, orgs):
     ListOrganisations(username, password, orgs)
 
     usrInput = input("Selected organisation: ")
-    if usrInput == "0": 
+    if usrInput == "0":
         return username
     else:
         org = orgs[int(usrInput)]
@@ -37,14 +37,14 @@ def CreateRepository(username, password, orgName):
     if orgName == username:
         isOrganisation = False
 
-    if (isOrganisation): 
+    if (isOrganisation):
         url = "%s/orgs/orgName/repos" % topUrl
     else:
         url = "%s/user/repos" % topUrl
 
     name = input("Repository Name: ")
     desc = input("Description: "),
-    
+
     jsonArr = [
             {
                 "name": name,
@@ -58,7 +58,7 @@ def CreateRepository(username, password, orgName):
 
     print("Posting to %s..." % url)
     postRequest = requests.post(url, auth=(username, password), json=jsonArr[0])
-    
+
     if isOrganisation: # TODO: For debugging only! Remove when fixed...
         print(postRequest.json())
     postedUrl = postRequest.json()["html_url"]
